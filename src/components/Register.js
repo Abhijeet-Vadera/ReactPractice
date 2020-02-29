@@ -15,17 +15,17 @@ class Register extends Component{
     }
 
     onChange(e){
-        this.state({[e.target.name]:e.target.value})
+        this.setState({[e.target.name]:e.target.value})
     }
     onSubmit(e){
         e.preventdefault()
-        const User={
+        const user={
             firstName:this.state.firstName,
             lastName:this.state.lastName,
             email:this.state.email,
             password:this.state.passsword
         }
-        register(User).then(res=>{
+        register(user).then(res=>{
             this.props.history.push('/login')
         })
     }

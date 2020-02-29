@@ -13,15 +13,15 @@ class Login extends Component{
     }
 
     onChange(e){
-        this.state({[e.target.name]:e.target.value})
+        this.setState({[e.target.name]:e.target.value})
     }
     onSubmit(e){
         e.preventdefault()
-        const User={
+        const user={
             email:this.state.email,
             password:this.state.passsword
         }
-        Login(User).then(res=>{
+        login(user).then(res=>{
             if(res){
                 this.props.history.push('/profile')
             }
